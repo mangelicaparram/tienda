@@ -1,6 +1,6 @@
-#MERN Proyecto Mision TIC C4
+MERN Proyecto Mision TIC C4
 
-#Lecciones
+Lecciones
 
 1.  Introducción
 2.  Instalar herramientas
@@ -11,4 +11,5 @@
 7.  Crear servidor Node
 8.  Fetch Products desde Backend
 9.  Utilizar Reducer
-10.
+10. Agregar BootStrap UI Framework: header, main y footer
+11.
