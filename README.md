@@ -12,4 +12,6 @@ Lecciones
 8.  Fetch Products desde Backend
 9.  Utilizar Reducer
 10. Agregar BootStrap UI Framework: header, main y footer
-11.
+11. Crear componente del producto
+12. Agregar producto a la pantalla
+13.
