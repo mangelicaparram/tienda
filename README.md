@@ -1,9 +1,10 @@
-MERN Proyecto Mision TIC C4
+#MERN Proyecto Mision TIC C4
 
-Lecciones
-Introducción
-Instalar herramientas
-Crear app React
-Crear repositorio Git
-Listar productos: crear, agregar, ajustar y personalizar
-Agregar routing
+#Lecciones
+
+1. Introducción
+2. Instalar herramientas
+3. Crear app React
+4. Crear repositorio Git
+5. Listar productos: crear, agregar, ajustar y personalizar
+6. Agregar routing
