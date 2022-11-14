@@ -8,3 +8,5 @@
 4. Crear repositorio Git
 5. Listar productos: crear, agregar, ajustar y personalizar
 6. Agregar routing
+7. Crear servidor Node
+8. Fetch Products desde Backend
