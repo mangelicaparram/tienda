@@ -14,4 +14,5 @@ Lecciones
 10. Agregar BootStrap UI Framework: header, main y footer
 11. Crear componente del producto
 12. Agregar producto a la pantalla
-13.
+13. Crear componente de mensajes y de carga
+14.
