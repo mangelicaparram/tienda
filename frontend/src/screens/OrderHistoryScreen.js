@@ -52,10 +52,10 @@ export default function OrderHistoryScreen() {
   return (
     <div>
       <Helmet>
-        <title>Order History</title>
+        <title>Historial de Ordenes</title>
       </Helmet>
 
-      <h1>Order History</h1>
+      <h1>Historial de Ordenes</h1>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
@@ -65,11 +65,11 @@ export default function OrderHistoryScreen() {
           <thead>
             <tr>
               <th>ID</th>
-              <th>DATE</th>
-              <th>TOTAL</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
-              <th>ACTIONS</th>
+              <th>Fecha</th>
+              <th>Total</th>
+              <th>Pago</th>
+              <th>Despacho</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -87,12 +87,12 @@ export default function OrderHistoryScreen() {
                 <td>
                   <Button
                     type="button"
-                    variant="light"
+                    variant="success"
                     onClick={() => {
                       navigate(`/order/${order._id}`);
                     }}
                   >
-                    Details
+                    Detalles
                   </Button>
                 </td>
               </tr>

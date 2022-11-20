@@ -55,7 +55,7 @@ export default function MapScreen() {
     ctxDispatch({
       type: 'SET_FULLBOX_ON',
     });
-  }, [ctxDispatch]);
+  }, [ctxDispatch, userInfo.token]);
 
   const onLoad = (map) => {
     mapRef.current = map;
@@ -114,7 +114,7 @@ export default function MapScreen() {
             <div className="map-input-box">
               <input type="text" placeholder="Enter your address"></input>
               <Button type="button" onClick={onConfirm}>
-                Confirm
+                Confirmar
               </Button>
             </div>
           </StandaloneSearchBox>

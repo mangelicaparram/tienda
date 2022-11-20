@@ -139,12 +139,12 @@ export default function ProductListScreen() {
     <div>
       <Row>
         <Col>
-          <h1>Products</h1>
+          <h1>Productos</h1>
         </Col>
         <Col className="col text-end">
           <div>
             <Button type="button" onClick={createHandler}>
-              Create Product
+              Crear Producto
             </Button>
           </div>
         </Col>
@@ -163,11 +163,11 @@ export default function ProductListScreen() {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>NAME</th>
-                <th>PRICE</th>
-                <th>CATEGORY</th>
-                <th>BRAND</th>
-                <th>ACTIONS</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Marca</th>
+                <th>Disponibles</th>
+                <th>Acciones</th>
               </tr>
             </thead>
             <tbody>
@@ -176,23 +176,23 @@ export default function ProductListScreen() {
                   <td>{product._id}</td>
                   <td>{product.name}</td>
                   <td>{product.price}</td>
-                  <td>{product.category}</td>
                   <td>{product.brand}</td>
+                  <td>{product.countInStock}</td>
                   <td>
                     <Button
                       type="button"
-                      variant="light"
+                      variant="success"
                       onClick={() => navigate(`/admin/product/${product._id}`)}
                     >
-                      Edit
+                      Editar
                     </Button>
                     &nbsp;
                     <Button
                       type="button"
-                      variant="light"
+                      variant="danger"
                       onClick={() => deleteHandler(product)}
                     >
-                      Delete
+                      Eliminar
                     </Button>
                   </td>
                 </tr>

@@ -41,7 +41,7 @@ function Product(props) {
         <Card.Text>${product.price}</Card.Text>
         {product.countInStock === 0 ? (
           <Button variant="light" disabled>
-            Out of stock
+            Agotado
           </Button>
         ) : (
           <Button onClick={() => addToCartHandler(product)}>

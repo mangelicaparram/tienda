@@ -90,9 +90,9 @@ export default function OrderListScreen() {
   return (
     <div>
       <Helmet>
-        <title>Orders</title>
+        <title>Ordenes</title>
       </Helmet>
-      <h1>Orders</h1>
+      <h1>Ordenes</h1>
       {loadingDelete && <LoadingBox></LoadingBox>}
       {loading ? (
         <LoadingBox></LoadingBox>
@@ -103,12 +103,12 @@ export default function OrderListScreen() {
           <thead>
             <tr>
               <th>ID</th>
-              <th>USER</th>
-              <th>DATE</th>
-              <th>TOTAL</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
-              <th>ACTIONS</th>
+              <th>Usuario</th>
+              <th>Fecha</th>
+              <th>Total</th>
+              <th>Pago</th>
+              <th>Despacho</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -128,20 +128,20 @@ export default function OrderListScreen() {
                 <td>
                   <Button
                     type="button"
-                    variant="light"
+                    variant="success"
                     onClick={() => {
                       navigate(`/order/${order._id}`);
                     }}
                   >
-                    Details
+                    Detalles
                   </Button>
                   &nbsp;
                   <Button
                     type="button"
-                    variant="light"
+                    variant="danger"
                     onClick={() => deleteHandler(order)}
                   >
-                    Delete
+                    Eliminar
                   </Button>
                 </td>
               </tr>

@@ -20,10 +20,7 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import ProfileScreen from './screens/ProfileScreen';
-import Button from 'react-bootstrap/Button';
 import { getError } from './utils';
-import axios from 'axios';
-import SearchBox from './components/SearchBox';
 import SearchScreen from './screens/SearchScreen';
 import ProtectedRoute from './components/ProtectedRoute';
 import DashboardScreen from './screens/DashboardScreen';
@@ -46,14 +43,13 @@ function App() {
     localStorage.removeItem('paymentMethod');
     window.location.href = '/signin';
   };
-  const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
-  const [categories, setCategories] = useState([]);
+  const [sidebarIsOpen] = useState(false);
 
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const { data } = await axios.get(`/api/products/categories`);
-        setCategories(data);
+        //const { data } = await axios.get(`/api/products/categories`);
+        //setCategories(data);
       } catch (err) {
         toast.error(getError(err));
       }
@@ -77,22 +73,14 @@ function App() {
         <header>
           <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
-              <Button
-                variant="dark"
-                onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
-              >
-                <i className="fas fa-bars"></i>
-              </Button>
-
               <LinkContainer to="/">
-                <Navbar.Brand>Tienda Proyecto C4</Navbar.Brand>
+                <Navbar.Brand>Proyecto Tienda C4 - Mision TIC</Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
-                <SearchBox />
                 <Nav className="me-auto  w-100  justify-content-end">
                   <Link to="/cart" className="nav-link">
-                    Carrito de Compras
+                    Carrito
                     {cart.cartItems.length > 0 && (
                       <Badge pill bg="danger">
                         {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
@@ -126,7 +114,7 @@ function App() {
                   {userInfo && userInfo.isAdmin && (
                     <NavDropdown title="Admin" id="admin-nav-dropdown">
                       <LinkContainer to="/admin/dashboard">
-                        <NavDropdown.Item>Tablero de Control</NavDropdown.Item>
+                        <NavDropdown.Item>Dashboard</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to="/admin/products">
                         <NavDropdown.Item>Productos</NavDropdown.Item>
@@ -144,29 +132,7 @@ function App() {
             </Container>
           </Navbar>
         </header>
-        <div
-          className={
-            sidebarIsOpen
-              ? 'active-nav side-navbar d-flex justify-content-between flex-wrap flex-column'
-              : 'side-navbar d-flex justify-content-between flex-wrap flex-column'
-          }
-        >
-          <Nav className="flex-column text-white w-100 p-2">
-            <Nav.Item>
-              <strong>Categorias</strong>
-            </Nav.Item>
-            {categories.map((category) => (
-              <Nav.Item key={category}>
-                <LinkContainer
-                  to={`/search?category=${category}`}
-                  onClick={() => setSidebarIsOpen(false)}
-                >
-                  <Nav.Link>{category}</Nav.Link>
-                </LinkContainer>
-              </Nav.Item>
-            ))}
-          </Nav>
-        </div>
+
         <main>
           <Container className="mt-3">
             <Routes>
@@ -269,7 +235,7 @@ function App() {
         </main>
         <footer>
           <div className="text-center">
-            Desarrollado por Team SoftDev - Todos los Derechos Reservados - 2022
+            Todos los Derechos Reservados - Desarrollado por Team SoftDev - 2022
           </div>
         </footer>
       </div>
