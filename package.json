@@ -10,5 +10,25 @@
     "react-google-charts": "^4.0.0",
     "react-toastify": "^9.1.1",
     "streamifier": "^0.1.1"
-  }
+  },
+  "name": "tienda",
+  "description": "MERN Proyecto Mision TIC C4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "build": "cd backend && npm install && cd ../frontend && npm install && npm run build",
+    "start": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mangelicaparram/tienda.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mangelicaparram/tienda/issues"
+  },
+  "homepage": "https://github.com/mangelicaparram/tienda#readme"
 }
