@@ -111,7 +111,7 @@ export default function ProductEditScreen() {
       dispatch({
         type: 'UPDATE_SUCCESS',
       });
-      toast.success('Product updated successfully');
+      toast.success('Producto actualizado exitosamente.');
       navigate('/admin/products');
     } catch (err) {
       toast.error(getError(err));
@@ -137,7 +137,7 @@ export default function ProductEditScreen() {
       } else {
         setImage(data.secure_url);
       }
-      toast.success('Image uploaded successfully. click Update to apply it');
+      toast.success('Imagen cargada exitosamente.');
     } catch (err) {
       toast.error(getError(err));
       dispatch({ type: 'UPLOAD_FAIL', payload: getError(err) });
@@ -186,7 +186,7 @@ export default function ProductEditScreen() {
             <Form.Control
               value={image}
               onChange={(e) => setImage(e.target.value)}
-              required
+              readOnly
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="imageFile">
