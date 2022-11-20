@@ -17,4 +17,5 @@ Lecciones
 13. Crear componente de mensajes y de carga (corregido)
 14. Agregar items al carrito (corregido)
 15. Mejorando funcionalidades del carrito
-16.
+16. Crear vista de carrito
+17.

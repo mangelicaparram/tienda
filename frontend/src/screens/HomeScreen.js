@@ -1,13 +1,12 @@
-import React, { useEffect, useReducer /*useState*/ } from 'react';
-//import { Link } from 'react-router-dom';
+import { useEffect, useReducer } from 'react';
 import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Product from '../components/Product';
 import { Helmet } from 'react-helmet-async';
-import MessageBox from './../components/MessageBox';
-import LoadingBox from './../components/LoadingBox';
-//import data from '../data';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
+// import data from '../data';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -39,16 +38,16 @@ function HomeScreen() {
         dispatch({ type: 'FETCH_FAIL', payload: err.message });
       }
 
-      //setProducts(result.data);
+      // setProducts(result.data);
     };
     fetchData();
   }, []);
   return (
     <div>
       <Helmet>
-        <title> Tienda Proyecto C4 </title>
+        <title>Tienda C4</title>
       </Helmet>
-      <h1> Lista de Productos </h1>
+      <h1>Listado de Productos</h1>
       <div className="products">
         {loading ? (
           <LoadingBox />
