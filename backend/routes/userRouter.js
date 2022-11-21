@@ -25,7 +25,7 @@ userRouter.get(
     if (user) {
       res.send(user);
     } else {
-      res.status(404).send({ message: 'User Not Found' });
+      res.status(404).send({ message: 'Usuario no existe' });
     }
   })
 );
@@ -51,7 +51,7 @@ userRouter.put(
         token: generateToken(updatedUser),
       });
     } else {
-      res.status(404).send({ message: 'User not found' });
+      res.status(404).send({ message: 'Usuario no encontrado' });
     }
   })
 );
@@ -69,7 +69,7 @@ userRouter.put(
       const updatedUser = await user.save();
       res.send({ message: 'User Updated', user: updatedUser });
     } else {
-      res.status(404).send({ message: 'User Not Found' });
+      res.status(404).send({ message: 'Usuario no encontrado' });
     }
   })
 );
@@ -82,13 +82,13 @@ userRouter.delete(
     const user = await User.findById(req.params.id);
     if (user) {
       if (user.email === 'admin@example.com') {
-        res.status(400).send({ message: 'Can Not Delete Admin User' });
+        res.status(400).send({ message: 'No puede eliminar al Administrador' });
         return;
       }
       await user.remove();
-      res.send({ message: 'User Deleted' });
+      res.send({ message: 'Usuario eliminado' });
     } else {
-      res.status(404).send({ message: 'User Not Found' });
+      res.status(404).send({ message: 'Usuario no encontrado' });
     }
   })
 );
@@ -108,7 +108,7 @@ userRouter.post(
         return;
       }
     }
-    res.status(401).send({ message: 'Invalid email or password' });
+    res.status(401).send({ message: 'Correo y/o contraseña inválidos' });
   })
 );
 

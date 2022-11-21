@@ -11,7 +11,13 @@ import uploadRouter from './routes/uploadRouter.js';
 dotenv.config();
 
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(
+    'mongodb+srv://admin:mapm1234@cluster0.q1yfbaf.mongodb.net/tiendaC4?retryWrites=true&w=majority',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => {
     console.log('connected to db');
   })
